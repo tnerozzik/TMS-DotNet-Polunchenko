@@ -24,7 +24,7 @@ namespace TMS.Polunchenko.Homework2
                     Console.WriteLine(datetime.ToString("MM/dd/yyyy"));
                     Console.ReadKey();
 
-                    break; // добавил выход из цикла
+                    //break; // добавил выход из цикла
                 }
                 
                 datetime = datetime.AddDays(1); // проблема была в данной строке
