@@ -19,13 +19,16 @@ namespace TMS.Polunchenko.Homework6
 
                 Console.WriteLine(" enter distance(km)");
 
-                eunlist.Add(new Run
+                var run = new Run
                 {
                     Weight = _weight,
                     Pulse = Convert.ToInt32(Console.ReadLine()),
-
                     Distance = Convert.ToInt32(Console.ReadLine())
-                });
+                };
+                run.Notify += Info;
+
+                eunlist.Add(run);
+
                 Console.WriteLine("Add more distance?\n1-Add.\n2-No,enough.");
                 var input = Console.ReadLine();
                 if (input == "1") { Stopword = "false"; }
@@ -36,6 +39,12 @@ namespace TMS.Polunchenko.Homework6
 
             return eunlist;
         }
+
+        private static void Info(string str)
+        {
+            Console.WriteLine(str);
+        }
+
         public static List<Yoga> AdditionYoga(int _weight)
         {
             string Stopword;
@@ -47,12 +56,16 @@ namespace TMS.Polunchenko.Homework6
 
                 Console.WriteLine("and enter duration of training(minutes)");
 
-                yogalist.Add(new Yoga
+                var yoga = new Yoga
                 {
                     Weight = _weight,
                     Pulse = Convert.ToInt32(Console.ReadLine()),
                     Time = Convert.ToInt32(Console.ReadLine())
-                });
+                };
+                yoga.Notify += Info;
+
+                yogalist.Add(yoga);
+
                 Console.WriteLine("Add more duration?\n1-Add.\n2-No,enough.");
                 var input = Console.ReadLine();
                 if (input == "1") { Stopword = "false"; }

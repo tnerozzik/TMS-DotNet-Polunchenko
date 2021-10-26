@@ -9,7 +9,6 @@ namespace TMS.Polunchenko.Homework6
         {
             var type = 0;
             Run run = new Run();
-            run.Notify += Info;
 
             var running = new List<Run>();
             var uogi = new List<Yoga>();
@@ -17,6 +16,7 @@ namespace TMS.Polunchenko.Homework6
             Console.WriteLine("Hello in fitness treaker, you can count the calories burned");
             Console.WriteLine("Enter your weight(kg):");
             int weight = Convert.ToInt32(Console.ReadLine());
+        
         link:
             Console.WriteLine("Select the type of activity:\n1-running.\n2-yoga.");
             var chose = Console.ReadLine();
@@ -62,9 +62,6 @@ namespace TMS.Polunchenko.Homework6
             }
         }
 
-        private static void Info(string str)
-        {
-            Console.WriteLine("повышенная нагрузка");
-        }
+        
     }
 }

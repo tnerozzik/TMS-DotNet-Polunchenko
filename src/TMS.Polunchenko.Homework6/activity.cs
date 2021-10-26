@@ -20,7 +20,7 @@ namespace TMS.Polunchenko.Homework6
             {
                 double Calories = Distance * Weight * 1.2;
                 Math.Ceiling(Calories);
-                Notify?.Invoke("Пульс выше 130 ударов");
+                Notify?.Invoke("Pulse above 130 beats");
                 return Calories;
             }
             else
@@ -43,7 +43,7 @@ namespace TMS.Polunchenko.Homework6
             if (Pulse > 130)
             {
                 double Calories = Time * Weight / 10 * 1.2;
-                Notify?.Invoke("Пульс выше 130 ударов");
+                Notify?.Invoke("Pulse above 130 beats");
                 return Calories;
             }
             else
