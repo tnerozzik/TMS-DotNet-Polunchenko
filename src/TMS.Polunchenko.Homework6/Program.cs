@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TMS.Polunchenko.Homework6
 {
@@ -13,6 +14,7 @@ namespace TMS.Polunchenko.Homework6
 
             var running = new List<Run>();
             var uogi = new List<Yoga>();
+        
 
             Console.WriteLine("Hello in fitness treaker, you can count the calories burned");
             Console.WriteLine("Enter your weight(kg):");
@@ -27,15 +29,15 @@ namespace TMS.Polunchenko.Homework6
                 {
                     case 1:
                         {
-                            var runing = Methods.AdditionRun(weight);
-                            running = runing;
+                             running = Methods.AdditionRun(weight);
+                          
                         }
                         break;
 
                     case 2:
                         {
-                            var yoga = Methods.AdditionYoga(weight);
-                            uogi = yoga;
+                            uogi = Methods.AdditionYoga(weight);
+                           
                         }
                         break;
                 }
@@ -59,12 +61,19 @@ namespace TMS.Polunchenko.Homework6
                 Methods.Show(running);
 
                 Methods.Show2(uogi);
+                Methods.OverCalories(running,uogi);
             }
+           
         }
+
 
         private static void Info(string str)
         {
             Console.WriteLine("повышенная нагрузка");
         }
+
+      
+        
+
     }
 }

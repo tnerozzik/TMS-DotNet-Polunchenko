@@ -4,7 +4,7 @@ namespace TMS.Polunchenko.Homework6
 {
     internal interface ICalories
     {
-        public double Calories();
+        public void GetCalories();
 
         public event Action<string> Notify;
     }

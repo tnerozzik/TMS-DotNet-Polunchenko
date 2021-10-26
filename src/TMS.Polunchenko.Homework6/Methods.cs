@@ -68,8 +68,9 @@ namespace TMS.Polunchenko.Homework6
         {
             foreach (var elem in _run)
             {
+                elem.GetCalories();
                 Console.WriteLine("Running:");
-                Console.WriteLine($"Distance:{elem.Distance}km, Calories Burned:{elem.Calories()}");
+                Console.WriteLine($"Distance:{elem.Distance}km, Calories Burned:{elem.Calories}");
             }
         }
 
@@ -77,9 +78,20 @@ namespace TMS.Polunchenko.Homework6
         {
             foreach (var elem in _yoga)
             {
+                elem.GetCalories();
                 Console.WriteLine("Yoga:");
-                Console.WriteLine($"Duration:{elem.Time},Calories Burned:{elem.Calories()}");
+                Console.WriteLine($"Duration:{elem.Time},Calories Burned:{elem.Calories}");
             }
+        }
+         public static void OverCalories(List<Run> r, List<Yoga> y)
+        {
+            var sumruncalories = r.Sum(r => r.Calories);
+            int R = Convert.ToInt32(sumruncalories);
+
+            var sumyogacalories = y.Sum(y => y.Calories);
+            int Y = Convert.ToInt32(sumyogacalories);
+
+            Console.WriteLine($"Сегодня потрачено калорий: {R + Y}");
         }
     }
 }

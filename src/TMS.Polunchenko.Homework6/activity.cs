@@ -13,20 +13,23 @@ namespace TMS.Polunchenko.Homework6
 
         public int Distance { get; set; }
         public int Pulse { get; set; }
-
-        public double Calories()
+        public double  Calories { get; set; }
+        public void  GetCalories()
         {
             if (Pulse > 130)
             {
-                double Calories = Distance * Weight * 1.2;
+                 Calories = Distance * Weight * 1.2;
                 Math.Ceiling(Calories);
+
                 Notify?.Invoke("Пульс выше 130 ударов");
-                return Calories;
-            }
+                
+
+                Notify?.Invoke("Pulse above 130 beats");
+             }
             else
             {
-                double Calories = Distance * Weight;
-                return Calories;
+                 Calories = Distance * Weight;
+          
             }
         }
     }
@@ -37,19 +40,26 @@ namespace TMS.Polunchenko.Homework6
 
         public int Time { get; set; }
         public int Pulse { get; set; }
+        public double Calories { get; set; }
 
-        public double Calories()
+        public void GetCalories()
         {
             if (Pulse > 130)
             {
-                double Calories = Time * Weight / 10 * 1.2;
+
+                Calories = Time * Weight / 10 * 1.2;
                 Notify?.Invoke("Пульс выше 130 ударов");
-                return Calories;
+               
+
+                 Calories = Time * Weight / 10 * 1.2;
+                Notify?.Invoke("Pulse above 130 beats");
+               
+
             }
             else
             {
-                int Calories = Time * Weight / 10;
-                return Calories;
+                 Calories = Time * Weight / 10;
+                
             }
         }
     }
